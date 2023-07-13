@@ -1,113 +1,94 @@
-# React homework template
+# Phonebook App
 
-Этот проект был создан при помощи
-[Create React App](https://github.com/facebook/create-react-app). Для знакомства
-и настройки дополнительных возможностей
-[обратись к документации](https://facebook.github.io/create-react-app/docs/getting-started).
+The Phonebook App is a simple web application built with React that allows users
+to store and manage their contacts. Users can add new contacts with a name and
+phone number, view their contacts, and filter contacts based on a search query.
 
-## Создание репозитория по шаблону
+## Features
 
-Используй этот репозиторий организации GoIT как шаблон для создания репозитория
-своего проекта. Для этого нажми на кнопку `«Use this template»` и выбери опцию
-`«Create a new repository»`, как показано на изображении.
+- Add a new contact: Enter a name and phone number to add a new contact to the
+  phonebook.
+- View contacts: See a list of all contacts in the phonebook.
+- Filter contacts: Search for specific contacts by name using the filter
+  feature.
+- Delete contacts: Remove a contact from the phonebook.
 
-![Creating repo from a template step 1](./assets/template-step-1.png)
+## Screenshots
 
-На следующем шаге откроется страница создания нового репозитория. Заполни поле
-его имени, убедись что репозиторий публичный, после чего нажми кнопку
-`«Create repository from template»`.
+![App Screenshot 1](./assets/phonebook-screen1.jpg) _Phonebook App 1_
 
-![Creating repo from a template step 2](./assets/template-step-2.png)
+![App Screenshot 2](./assets/phonebook-screen2.jpg) _With contact list_
 
-После того как репозиторий будет создан, необходимо перейти в настройки
-созданного репозитория на вкладку `Settings` > `Actions` > `General` как
-показано на изображении.
+![App Screenshot 3](./assets/phonebook-screen3.jpg) _Catching Errors_
 
-![Settings GitHub Actions permissions step 1](./assets/gh-actions-perm-1.png)
+## Technologies Used
 
-Проскролив страницу до самого конца, в секции `«Workflow permissions»` выбери
-опцию `«Read and write permissions»` и поставь галочку в чекбоксе. Это
-необходимо для автоматизации процесса деплоя проекта.
+- React: JavaScript library for building user interfaces.
+- Formik: Form library for React to handle form state and validation.
+- Yup: JavaScript schema builder for form validation.
+- @emotion/react: CSS-in-JS library for styling components.
+- shortid: Library for generating unique IDs for contacts.
+- prop-types: Runtime type checking for React props.
+- modern-normalize: Modern CSS reset styles.
+- react-scripts: Development and build scripts for React applications.
+- reduxjs/toolkit: For State management.
 
-![Settings GitHub Actions permissions step 2](./assets/gh-actions-perm-2.png)
+## Getting Started
 
-Теперь у тебя есть личный репозиторий проекта, со структурой файлов и папок
-репозитория-шаблона. Далее работай с ним как с любым другим личным репозиторием,
-клонируй его себе на компьютер, пиши код, делай коммиты и отправляй их на
-GitHub.
+To get started with the Phonebook App, follow these steps:
 
-## Подготовка к работе
+1. Clone the repository:
+   `git clone https://github.com/your-username/phonebook-app.git`
+2. Install the dependencies: `npm install`
+3. Start the development server: `npm start`
+4. Open the app in your browser: `http://localhost:3000`
 
-1. Убедись что на компьютере установлена LTS-версия Node.js.
-   [Скачай и установи](https://nodejs.org/en/) её если необходимо.
-2. Установи базовые зависимости проекта командой `npm install`.
-3. Запусти режим разработки, выполнив команду `npm start`.
-4. Перейди в браузере по адресу [http://localhost:3000](http://localhost:3000).
-   Эта страница будет автоматически перезагружаться после сохранения изменений в
-   файлах проекта.
+## Deployment
 
-## Деплой
+The app can be deployed to various hosting platforms, such as GitHub Pages,
+Netlify, or Heroku. To deploy the app, follow these general steps:
 
-Продакшн версия проекта будет автоматически проходить линтинг, собираться и
-деплоиться на GitHub Pages, в ветку `gh-pages`, каждый раз когда обновляется
-ветка `main`. Например, после прямого пуша или принятого пул-реквеста. Для этого
-необходимо в файле `package.json` отредактировать поле `homepage`, заменив
-`your_username` и `your_repo_name` на свои, и отправить изменения на GitHub.
+1. Build the production-ready bundle: npm run build
+2. Deploy the contents of the build folder to your preferred hosting platform.
+3. Configure the hosting platform to serve the index.html file as the entry
+   point.
 
-```json
-"homepage": "https://your_username.github.io/your_repo_name/"
-```
+For specific instructions on deploying to a particular platform, refer to their
+respective documentation.
 
-Далее необходимо зайти в настройки GitHub-репозитория (`Settings` > `Pages`) и
-выставить раздачу продакшн версии файлов из папки `/root` ветки `gh-pages`, если
-это небыло сделано автоматически.
+## Folder Structure
 
-![GitHub Pages settings](./assets/repo-settings.png)
+The project structure is organized as follows:
 
-### Статус деплоя
+- src: Contains the application source code.
+  - components: Holds reusable components used in the app.
+    - App: The main application component.
+    - ContactForm: Component for adding new contacts.
+    - ContactFilter: Component for filtering contacts by name.
+    - ContactList: Component for displaying the list of contacts.
+    - ContactStats: Component for displaying the total contact count.
+    - Each component has its own folder with the component file and related
+      files.
+  - styles: Contains global styles and theme configuration.
+  - index.js: Entry point of the application.
 
-Статус деплоя крайнего коммита отображается иконкой возле его идентификатора.
+## Contributing
 
-- **Желтый цвет** - выполняется сборка и деплой проекта.
-- **Зеленый цвет** - деплой завершился успешно.
-- **Красный цвет** - во время линтинга, сборки или деплоя произошла ошибка.
+Contributions are welcome! If you find any issues or have suggestions for
+improvement, please feel free to open an issue or submit a pull request.
 
-Более детальную информацию о статусе можно посмотреть кликнув по иконке, и в
-выпадающем окне перейти по ссылке `Details`.
+## License
 
-![Deployment status](./assets/deploy-status.png)
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file
+for details.
 
-### Живая страница
+## Acknowledgments
 
-Через какое-то время, обычно пару минут, живую страницу можно будет посмотреть
-по адресу указанному в отредактированном свойстве `homepage`. Например, вот
-ссылка на живую версию для этого репозитория
-[https://goitacademy.github.io/react-homework-template](https://goitacademy.github.io/react-homework-template).
+This app was created as a homework assignment for the React module of a coding
+at Go IT Courses. Thanks to the creators and contributors of the open-source
+libraries used in this project.
 
-Если открывается пустая страница, убедись что во вкладке `Console` нет ошибок
-связанных с неправильными путями к CSS и JS файлам проекта (**404**). Скорее
-всего у тебя неправильное значение свойства `homepage` в файле `package.json`.
+## Contact
 
-### Маршрутизация
-
-Если приложение использует библиотеку `react-router-dom` для маршрутизации,
-необходимо дополнительно настроить компонент `<BrowserRouter>`, передав в пропе
-`basename` точное название твоего репозитория. Слеш в начале строки обязателен.
-
-```jsx
-<BrowserRouter basename="/your_repo_name">
-  <App />
-</BrowserRouter>
-```
-
-## Как это работает
-
-![How it works](./assets/how-it-works.png)
-
-1. После каждого пуша в ветку `main` GitHub-репозитория, запускается специальный
-   скрипт (GitHub Action) из файла `.github/workflows/deploy.yml`.
-2. Все файлы репозитория копируются на сервер, где проект инициализируется и
-   проходит линтинг и сборку перед деплоем.
-3. Если все шаги прошли успешно, собранная продакшн версия файлов проекта
-   отправляется в ветку `gh-pages`. В противном случае, в логе выполнения
-   скрипта будет указано в чем проблема.
+If you have any questions or suggestions, feel free to contact me at
+vadborov@gmail.com.
