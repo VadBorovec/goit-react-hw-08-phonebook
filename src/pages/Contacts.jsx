@@ -1,15 +1,23 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Helmet } from 'react-helmet';
-// import { TaskList } from '../components/TaskList';
-import { ContactForm } from 'components';
+
+import {
+  ContactFilter,
+  ContactForm,
+  ContactList,
+  ContactStats,
+  Spinner,
+} from 'components';
+import { Section } from 'components/ui';
 
 import { fetchContacts } from 'redux/contacts/operations';
-import { selectIsLoading } from 'redux/contacts/selectors';
+import { selectError, selectIsLoading } from 'redux/contacts/selectors';
 
 export default function ContactsPage() {
   const dispatch = useDispatch();
   const isLoading = useSelector(selectIsLoading);
+  const error = useSelector(selectError);
 
   useEffect(() => {
     dispatch(fetchContacts());
@@ -18,12 +26,16 @@ export default function ContactsPage() {
   return (
     <>
       <Helmet>
-        <title>Your tasks</title>
+        <title>Your phonebook</title>
       </Helmet>
-      <ContactForm />
-      <div>{isLoading && 'Request in progress...'}</div>
-      {/* <TaskList /> */}
-      <div>Taskks Liast</div>
+      <Section title={'Phonebook'}>
+        <ContactForm />
+        <div>{isLoading && 'Request in progress...'}</div>
+        {isLoading && !error && <Spinner />}
+        <ContactFilter />
+        <ContactStats />
+        <ContactList />
+      </Section>
     </>
   );
 }
