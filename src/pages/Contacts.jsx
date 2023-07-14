@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Helmet } from 'react-helmet';
 // import { TaskList } from '../components/TaskList';
-// import { TaskEditor } from '../components/TaskEditor';
+import { ContactForm } from 'components';
 
 import { fetchContacts } from 'redux/contacts/operations';
 import { selectIsLoading } from 'redux/contacts/selectors';
@@ -20,7 +20,7 @@ export default function ContactsPage() {
       <Helmet>
         <title>Your tasks</title>
       </Helmet>
-      {/* <TaskEditor /> */}
+      <ContactForm />
       <div>{isLoading && 'Request in progress...'}</div>
       {/* <TaskList /> */}
       <div>Taskks Liast</div>

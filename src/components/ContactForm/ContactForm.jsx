@@ -1,7 +1,7 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
-import shortid from 'shortid';
+// import shortid from 'shortid';
 import Notiflix from 'notiflix';
 
 import { addContact } from 'redux/contacts/operations';
@@ -18,7 +18,7 @@ const validationSchema = Yup.object().shape({
       "Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
     )
     .required('Name is required'),
-  phone: Yup.string()
+  number: Yup.string()
     .matches(
       /\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}/,
       'Phone number must be digits and can contain spaces, dashes, parentheses and can start with +'
@@ -34,14 +34,14 @@ export const ContactForm = () => {
   const formik = useFormik({
     initialValues: {
       name: '',
-      phone: '',
+      number: '',
     },
     validationSchema,
     onSubmit: (values, { resetForm }) => {
       const contact = {
-        id: shortid.generate(),
+        // id: shortid.generate(),
         name: values.name,
-        phone: values.phone,
+        number: values.number,
       };
 
       const existingName = contacts.find(
@@ -49,8 +49,8 @@ export const ContactForm = () => {
       );
       const existingNumber = contacts.find(
         contact =>
-          contact.phone.replace(/[^\d]/g, '') ===
-          values.phone.replace(/[^\d]/g, '')
+          contact.number.replace(/[^\d]/g, '') ===
+          values.number.replace(/[^\d]/g, '')
       );
 
       if (existingName) {
@@ -60,7 +60,7 @@ export const ContactForm = () => {
         return;
       } else if (existingNumber) {
         Notiflix.Notify.failure(
-          `Contact with this number - ${values.phone} already exists!`
+          `Contact with this number - ${values.number} already exists!`
         );
         return;
       }
@@ -90,16 +90,16 @@ export const ContactForm = () => {
           <Error>{formik.errors.name}</Error>
         )}
       </Label>
-      <Label htmlFor="phone">
+      <Label htmlFor="number">
         Number
         <Input
           type="tel"
-          name="phone"
+          name="number"
           placeholder="Enter number"
-          {...formik.getFieldProps('phone')}
+          {...formik.getFieldProps('number')}
         />
-        {formik.touched.phone && formik.errors.phone && (
-          <Error>{formik.errors.phone}</Error>
+        {formik.touched.number && formik.errors.number && (
+          <Error>{formik.errors.number}</Error>
         )}
       </Label>
       <Button type="submit" disabled={isLoading}>
@@ -124,7 +124,7 @@ export const ContactForm = () => {
 //     e.preventDefault();
 
 //     const contactName = e.currentTarget.elements.name.value;
-//     const contactPhone = e.currentTarget.elements.phone.value;
+//     const contactPhone = e.currentTarget.elements.number.value;
 
 //     if (!contactName || !contactPhone) {
 //       Notiflix.Notify.warning('Please enter name and phone number');
@@ -153,11 +153,11 @@ export const ContactForm = () => {
 //           required
 //         />
 //       </Label>
-//       <Label htmlFor="phone">
+//       <Label htmlFor="number">
 //         Number
 //         <Input
 //           type="tel"
-//           name="phone"
+//           name="number"
 //           pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
 //           placeholder="Enter number"
 //           required
@@ -191,18 +191,18 @@ export const ContactForm = () => {
 
 //     const form = e.currentTarget;
 //     const contactName = form.elements.name.value;
-//     const contactPhone = form.elements.phone.value;
+//     const contactPhone = form.elements.number.value;
 
 //     const existingName = contacts.find(
 //       contact => contact.name.toLowerCase() === contactName.toLowerCase()
 //     );
 //     const existingNumber = contacts.find(
-//       contact => contact.phone === contactPhone
+//       contact => contact.number === contactPhone
 //     );
 
 //     // * перестала працювати дана перевірка..раніше працювала
 //     // const existingNumber = contacts.find(contact => {
-//     //   const storedPhone = contact.phone.toLowerCase().replace(/\D/g, '');
+//     //   const storedPhone = contact.number.toLowerCase().replace(/\D/g, '');
 //     //   const formPhone = contactPhone.toLowerCase().replace(/\D/g, '');
 //     //   return storedPhone.includes(formPhone);
 //     // });
@@ -227,7 +227,7 @@ export const ContactForm = () => {
 //     dispatch(
 //       addContact({
 //         name: contactName,
-//         phone: contactPhone,
+//         number: contactPhone,
 //       })
 //     );
 
@@ -247,11 +247,11 @@ export const ContactForm = () => {
 //           // required
 //         />
 //       </Label>
-//       <Label htmlFor="phone">
+//       <Label htmlFor="number">
 //         Number
 //         <Input
 //           type="tel"
-//           name="phone"
+//           name="number"
 //           pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
 //           placeholder="Enter number"
 //           // required
