@@ -9,9 +9,11 @@ export const Layout = () => {
   return (
     <Container>
       <AppBar />
-      <Suspense fallback={null}>
-        <Outlet />
-      </Suspense>
+      <main>
+        <Suspense fallback={null}>
+          <Outlet />
+        </Suspense>
+      </main>
       <Toaster position="top-right" reverseOrder={false} />
       <Footer />
     </Container>
