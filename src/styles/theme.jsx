@@ -21,6 +21,9 @@ export const theme = Object.freeze({
     small: '14px',
     medium: '18px',
     large: '22px',
+    xlarge: '26px',
+    xxlarge: '32px',
+    xxxlarge: '48px',
   },
   spacing: value => `${4 * value}px`,
   shadows: {
