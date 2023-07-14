@@ -4,8 +4,8 @@ import * as Yup from 'yup';
 import shortid from 'shortid';
 import Notiflix from 'notiflix';
 
-import { addContact } from 'redux/operations';
-import { selectContacts, selectIsLoading } from 'redux/selectors';
+import { addContact } from 'redux/contacts/operations';
+import { selectContacts, selectIsLoading } from 'redux/contacts/selectors';
 
 import { Spinner } from 'components';
 import { Button } from 'components/ui';

@@ -1,6 +1,6 @@
 import { useSelector } from 'react-redux';
 
-import { visibleContacts } from 'redux/selectors';
+import { visibleContacts } from 'redux/contacts/selectors';
 
 import { ContactItem } from 'components';
 import { Text } from 'components/ui';

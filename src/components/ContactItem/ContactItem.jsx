@@ -1,7 +1,7 @@
 import { useDispatch, useSelector } from 'react-redux';
 
-import { deleteContact } from 'redux/operations';
-import { selectIsLoading } from 'redux/selectors';
+import { deleteContact } from 'redux/contacts/operations';
+import { selectIsLoading } from 'redux/contacts/selectors';
 
 import { Spinner } from 'components';
 import { Button } from 'components/ui';

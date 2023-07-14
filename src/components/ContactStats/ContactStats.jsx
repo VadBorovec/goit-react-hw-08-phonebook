@@ -1,6 +1,6 @@
 import { useSelector } from 'react-redux';
 
-import { selectContacts } from 'redux/selectors';
+import { selectContacts } from 'redux/contacts/selectors';
 
 import { Box, Text } from './ContactStats.styled';
 
