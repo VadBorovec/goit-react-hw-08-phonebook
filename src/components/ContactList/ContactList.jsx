@@ -15,8 +15,8 @@ export const ContactList = () => {
         <Text textAlign="center">There are no any numbers...</Text>
       ) : (
         <>
-          {contacts.map(({ id, name, phone }) => (
-            <ContactItem key={id} id={id} name={name} phone={phone} />
+          {contacts.map(({ id, name, number }) => (
+            <ContactItem key={id} id={id} name={name} number={number} />
           ))}
         </>
       )}

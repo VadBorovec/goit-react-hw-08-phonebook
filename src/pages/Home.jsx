@@ -1,4 +1,6 @@
+import { Button } from 'components/ui';
 import { Helmet } from 'react-helmet';
+import { NavLink } from 'react-router-dom';
 
 const styles = {
   container: {
@@ -27,6 +29,10 @@ export default function Home() {
             💁‍♀️
           </span>
         </h1>
+        <br />
+        <Button>
+          <NavLink to="/contacts">Tasks</NavLink>
+        </Button>
       </div>
     </>
   );

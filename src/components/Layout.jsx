@@ -2,7 +2,7 @@ import { Suspense } from 'react';
 import { Outlet } from 'react-router-dom';
 import { Toaster } from 'react-hot-toast';
 
-import { AppBar } from 'components';
+import { AppBar, Footer } from 'components';
 import { Container } from 'components/ui';
 
 export const Layout = () => {
@@ -13,6 +13,7 @@ export const Layout = () => {
         <Outlet />
       </Suspense>
       <Toaster position="top-right" reverseOrder={false} />
+      <Footer />
     </Container>
   );
 };

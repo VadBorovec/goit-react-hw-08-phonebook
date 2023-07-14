@@ -9,6 +9,7 @@ export * from './ContactForm';
 export * from './ContactList';
 export * from './ContactItem';
 export * from './ContactStats';
+export * from './Footer';
 export * from './LoginForm';
 export * from './Navigation';
 export * from './RegisterForm';
