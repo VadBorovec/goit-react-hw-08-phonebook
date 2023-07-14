@@ -1,4 +1,7 @@
 export * from './App';
+export * from './Layout';
+export * from './PrivateRoute';
+export * from './RestrictedRoute';
 export * from './AppBar';
 export * from './AuthNav';
 export * from './ContactFilter';

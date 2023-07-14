@@ -1,5 +1,5 @@
 import { Helmet } from 'react-helmet';
-import { RegisterForm } from '../components/RegisterForm';
+import { RegisterForm } from 'components';
 
 export default function Register() {
   return (
