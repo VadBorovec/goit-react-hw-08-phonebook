@@ -7,7 +7,7 @@ import { Container } from 'components/ui';
 
 const styles = {
   container: {
-    minHeight: 'calc(100vh - 200px)',
+    minHeight: 'calc(100vh - 165px)',
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
