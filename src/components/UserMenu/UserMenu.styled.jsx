@@ -5,6 +5,11 @@ export const Wrapper = styled.div`
   align-items: center;
   justify-content: center;
   gap: 12px;
+
+  @media (max-width: 480px) {
+    flex-direction: column;
+    gap: 0;
+  }
 `;
 
 export const UserName = styled.p`
@@ -14,4 +19,5 @@ export const UserName = styled.p`
   font-weight: 700;
   color: ${props => props.theme.colors.dark};
   margin: 0;
+  text-align: center;
 `;
