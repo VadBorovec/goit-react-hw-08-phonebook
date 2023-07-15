@@ -1,4 +1,5 @@
 import styled from '@emotion/styled';
+import { NavLink } from 'react-router-dom';
 
 export const HeroWrap = styled.div`
   min-height: calc(100vh - 50px);
@@ -21,7 +22,7 @@ export const Text = styled.p`
   text-align: center;
 `;
 
-export const Link = styled.a`
+export const Link = styled(NavLink)`
   font-size: ${props => props.theme.fontSizes.medium};
   font-weight: 500;
   color: ${props => props.theme.colors.btn};

@@ -8,7 +8,7 @@ export const theme = Object.freeze({
     blue: '#2196f3',
     gray: '#9e9e9e',
     light: '#f2f2f2',
-    dark: '#212121',
+    dark: '#2a363b',
     btn: 'teal',
     btnHover: 'darkcyan',
     btnActive: 'lightseagreen',

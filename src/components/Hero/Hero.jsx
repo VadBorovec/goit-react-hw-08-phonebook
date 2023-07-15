@@ -15,7 +15,7 @@ export const Hero = () => {
         Say goodbye to the chaos of traditional contact management. Experience
         the power of organization at your fingertips. Discover a new way to
         streamline your contacts with our Phonebook App today:{' '}
-        <Link href="/contacts">Phonebook Page</Link>
+        <Link to="/login">Phonebook Page</Link>
       </Text>
     </HeroWrap>
   );
