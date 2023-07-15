@@ -2,7 +2,7 @@ import styled from '@emotion/styled';
 import { NavLink } from 'react-router-dom';
 
 export const HeroWrap = styled.div`
-  min-height: calc(100vh - 50px);
+  /* min-height: calc(100vh - 200px); */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -14,12 +14,15 @@ export const Title = styled.h1`
   font-size: ${props => props.theme.fontSizes.xxxlarge};
   text-align: center;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  max-width: 740px;
+  line-height: ${props => props.theme.spacing(16)};
 `;
 
 export const Text = styled.p`
   font-size: ${props => props.theme.fontSizes.medium};
   line-height: 1.5;
   text-align: center;
+  max-width: 740px;
 `;
 
 export const Link = styled(NavLink)`

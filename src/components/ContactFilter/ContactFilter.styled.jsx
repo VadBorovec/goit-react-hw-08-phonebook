@@ -4,7 +4,12 @@ export const Filter = styled.div`
   display: inline-block;
   padding: ${props => props.theme.spacing(4)};
   margin: 0;
-  width: 50%;
+  width: 52%;
+
+  @media (max-width: 480px) {
+    display: block;
+    width: 100%;
+  }
 `;
 
 export const Label = styled.label`

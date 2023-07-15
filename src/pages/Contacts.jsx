@@ -30,7 +30,6 @@ export default function ContactsPage() {
       </Helmet>
       <Section title={'Phonebook'}>
         <ContactForm />
-        <div>{isLoading && 'Request in progress...'}</div>
         {isLoading && !error && <Spinner />}
         <ContactFilter />
         <ContactStats />

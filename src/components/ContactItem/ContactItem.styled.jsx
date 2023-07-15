@@ -6,7 +6,6 @@ export const Item = styled.li`
   align-items: center;
   justify-content: space-between;
 
-  padding: 20px;
   padding: 10px 30px 10px 10px;
   overflow: hidden;
   border-radius: 10px;
@@ -22,6 +21,10 @@ export const Item = styled.li`
     transform: scale(1.02);
     box-shadow: ${props => props.theme.shadows.small};
   }
+  @media (max-width: 480px) {
+    flex-direction: column;
+    padding: ${props => props.theme.spacing(2)};
+  }
 `;
 
 export const Name = styled.h3`
@@ -33,6 +36,15 @@ export const Name = styled.h3`
 
   margin-left: ${props => props.theme.spacing(2)};
   margin-bottom: 0;
+  max-width: 40%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+
+  @media (max-width: 480px) {
+    margin-bottom: ${props => props.theme.spacing(1)};
+    max-width: 100%;
+  }
 `;
 
 export const Number = styled.p`
@@ -44,4 +56,13 @@ export const Number = styled.p`
 
   margin-left: ${props => props.theme.spacing(2)};
   margin-bottom: 0;
+  max-width: 40%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+
+  @media (max-width: 480px) {
+    margin-bottom: ${props => props.theme.spacing(1)};
+    max-width: 100%;
+  }
 `;

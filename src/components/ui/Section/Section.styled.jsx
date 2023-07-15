@@ -6,7 +6,7 @@ export const Card = styled.section`
 
   width: fit-content;
   overflow: visible;
-  margin: ${props => props.theme.spacing(20)} auto;
+  margin: ${props => props.theme.spacing(10)} auto;
 
   box-shadow: ${props => props.theme.shadows.medium};
   border-radius: ${props => props.theme.spacing(4)};
