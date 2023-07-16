@@ -2,7 +2,6 @@ import styled from '@emotion/styled';
 import { NavLink } from 'react-router-dom';
 
 export const HeroWrap = styled.div`
-  /* min-height: calc(100vh - 200px); */
   display: flex;
   align-items: center;
   justify-content: center;

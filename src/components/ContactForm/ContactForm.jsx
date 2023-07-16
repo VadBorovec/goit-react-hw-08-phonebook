@@ -1,7 +1,6 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
-// import shortid from 'shortid';
 import Notiflix from 'notiflix';
 
 import { addContact } from 'redux/contacts/operations';
@@ -39,7 +38,6 @@ export const ContactForm = () => {
     validationSchema,
     onSubmit: (values, { resetForm }) => {
       const contact = {
-        // id: shortid.generate(),
         name: values.name,
         number: values.number,
       };
@@ -66,11 +64,10 @@ export const ContactForm = () => {
       }
 
       dispatch(addContact(contact))
-        .then(
-          Notiflix.Notify.success(
-            `${values.name} has been added to your phonebook`
-          )
-        )
+        .unwrap()
+        .then(({ name }) => {
+          Notiflix.Notify.success(`${name} has been added to your phonebook`);
+        })
         .catch(error => console.log(error.message))
         .finally(resetForm());
     },
@@ -161,100 +158,6 @@ export const ContactForm = () => {
 //           pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
 //           placeholder="Enter number"
 //           required
-//         />
-//       </Label>
-//       <Button type="submit" disabled={isLoading}>
-//         {isLoading && <Spinner size={12} />}
-//         Add contact
-//       </Button>
-//     </StyledForm>
-//   );
-// };
-// !====================without formik
-// import { useDispatch, useSelector } from 'react-redux';
-// import Notiflix from 'notiflix';
-
-// import { addContact } from 'redux/operations';
-// import { selectContacts, selectIsLoading } from 'redux/selectors';
-
-// import { Spinner } from 'components';
-// import { Button } from 'components/ui';
-// import { StyledForm, Label, Input } from './ContactForm.styled';
-
-// export const ContactForm = () => {
-//   const dispatch = useDispatch();
-//   const contacts = useSelector(selectContacts);
-//   const isLoading = useSelector(selectIsLoading);
-
-//   const handleSubmit = async e => {
-//     e.preventDefault();
-
-//     const form = e.currentTarget;
-//     const contactName = form.elements.name.value;
-//     const contactPhone = form.elements.number.value;
-
-//     const existingName = contacts.find(
-//       contact => contact.name.toLowerCase() === contactName.toLowerCase()
-//     );
-//     const existingNumber = contacts.find(
-//       contact => contact.number === contactPhone
-//     );
-
-//     // * перестала працювати дана перевірка..раніше працювала
-//     // const existingNumber = contacts.find(contact => {
-//     //   const storedPhone = contact.number.toLowerCase().replace(/\D/g, '');
-//     //   const formPhone = contactPhone.toLowerCase().replace(/\D/g, '');
-//     //   return storedPhone.includes(formPhone);
-//     // });
-
-//     if (existingName) {
-//       Notiflix.Notify.failure(
-//         `Contact with this name - ${contactName} already exists!`
-//       );
-//       return;
-//     } else if (existingNumber) {
-//       Notiflix.Notify.failure(
-//         `Contact with this number - ${contactPhone} already exists!`
-//       );
-//       return;
-//     }
-
-//     if (!contactName || !contactPhone) {
-//       Notiflix.Notify.warning('Please enter name and phone number');
-//       return;
-//     }
-
-//     dispatch(
-//       addContact({
-//         name: contactName,
-//         number: contactPhone,
-//       })
-//     );
-
-//     form.reset();
-//     Notiflix.Notify.success(`${contactName} has been added to  your phonebook`);
-//   };
-
-//   return (
-//     <StyledForm autoComplete="off" onSubmit={handleSubmit}>
-//       <Label htmlFor="name">
-//         Name
-//         <Input
-//           type="text"
-//           name="name"
-//           pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
-//           placeholder="Enter name"
-//           // required
-//         />
-//       </Label>
-//       <Label htmlFor="number">
-//         Number
-//         <Input
-//           type="tel"
-//           name="number"
-//           pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
-//           placeholder="Enter number"
-//           // required
 //         />
 //       </Label>
 //       <Button type="submit" disabled={isLoading}>

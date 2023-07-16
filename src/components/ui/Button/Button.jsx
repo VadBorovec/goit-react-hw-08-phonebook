@@ -1,12 +1,7 @@
 import styled from '@emotion/styled';
 
 export const Button = styled.button`
-  /* display: flex; */
-  /* width: 100%; */
-  /* justify-content: center; */
-
   font-family: inherit;
-
   padding: 0.6rem 1rem;
   margin: 0 0.5rem;
   background-color: ${props => props.theme.colors.btn};

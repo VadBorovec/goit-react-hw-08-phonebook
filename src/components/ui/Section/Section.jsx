@@ -1,4 +1,3 @@
-// import PropTypes from 'prop-types';
 import { Card, CardHeader, CardTitle, CardContent } from './Section.styled';
 
 export const Section = ({ title, children }) => {
@@ -13,7 +12,3 @@ export const Section = ({ title, children }) => {
     </Card>
   );
 };
-
-// Title.propTypes = {
-//   title: PropTypes.string,
-// };

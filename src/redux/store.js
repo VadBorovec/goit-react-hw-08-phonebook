@@ -23,7 +23,7 @@ const middleware = [
   }),
 ];
 
-// Persisting token field from auth slice to localstorage
+//* Persisting token field from auth slice to localstorage
 const authPersistConfig = {
   key: 'auth',
   storage,

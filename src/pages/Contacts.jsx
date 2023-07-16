@@ -38,31 +38,3 @@ export default function ContactsPage() {
     </>
   );
 }
-
-// ! ====
-
-// import { fetchContacts } from 'redux/contacts/operations';
-// import { selectError, selectIsLoading } from 'redux/contacts/selectors';
-
-// export const App = () => {
-//   const dispatch = useDispatch();
-//   const { isRefreshing } = useAuth();
-//   const isLoading = useSelector(selectIsLoading);
-//   const error = useSelector(selectError);
-
-//   useEffect(() => {
-//     dispatch(fetchContacts());
-//   }, [dispatch]);
-
-//   return (
-//     <Container>
-//       <Section title="Phonebook">
-//         <ContactForm />
-//         {isLoading && !error && <Spinner />}
-//         <ContactFilter />
-//         <ContactStats />
-//         <ContactList />
-//       </Section>
-//     </Container>
-//   );
-// };

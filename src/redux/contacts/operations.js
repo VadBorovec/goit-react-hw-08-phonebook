@@ -3,7 +3,7 @@ import axios from 'axios';
 
 axios.defaults.baseURL = 'https://connections-api.herokuapp.com/';
 
-// GET @ /contacts
+//* GET @ /contacts
 export const fetchContacts = createAsyncThunk(
   'contacts/fetchAll',
   async (_, thunkAPI) => {
@@ -16,7 +16,7 @@ export const fetchContacts = createAsyncThunk(
   }
 );
 
-// POST @ /contacts
+//* POST @ /contacts
 export const addContact = createAsyncThunk(
   'contacts/addContact',
   async (contact, thunkAPI) => {
@@ -29,7 +29,7 @@ export const addContact = createAsyncThunk(
   }
 );
 
-// DELETE @ /contacts/:id
+//* DELETE @ /contacts/:id
 export const deleteContact = createAsyncThunk(
   'contacts/deleteContact',
   async (contactId, thunkAPI) => {

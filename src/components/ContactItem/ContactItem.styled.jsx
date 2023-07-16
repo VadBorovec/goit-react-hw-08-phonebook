@@ -1,7 +1,6 @@
 import styled from '@emotion/styled';
 
 export const Item = styled.li`
-  /* position: relative; */
   display: flex;
   align-items: center;
   justify-content: space-between;

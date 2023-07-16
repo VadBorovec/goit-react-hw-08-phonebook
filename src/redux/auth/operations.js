@@ -13,29 +13,14 @@ const clearAuthHeader = () => {
   axios.defaults.headers.common.Authorization = '';
 };
 
-//* second var for const token
-// const token = {
-//   set(token) {
-//     axios.defaults.headers.common.Authorization = `Bearer ${token}`
-//   },
-//   unset() {
-//     axios.defaults.headers.common.Authorization = '';
-//   }
-// }
-
-/*
- * POST @ /users/signup
- * body: { name, email, password }
- */
+//* POST @ /users/signup
+//* body: { name, email, password }
 export const register = createAsyncThunk(
   'auth/register',
   async (credentials, thunkAPI) => {
     try {
       const res = await axios.post('/users/signup', credentials);
-      //* After successful registration, add the token to the HTTP header
       setAuthHeader(res.data.token);
-      //* second var for const token
-      // token.set(res.data.token);
       return res.data;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);
@@ -43,19 +28,14 @@ export const register = createAsyncThunk(
   }
 );
 
-/*
- * POST @ /users/login
- * body: { email, password }
- */
+//* POST @ /users/login
+//* body: { email, password }
 export const logIn = createAsyncThunk(
   'auth/login',
   async (credentials, thunkAPI) => {
     try {
       const res = await axios.post('/users/login', credentials);
-      //* After successful login, add the token to the HTTP header
       setAuthHeader(res.data.token);
-      //* second var for const token
-      // token.set(res.data.token);
       return res.data;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);
@@ -63,26 +43,19 @@ export const logIn = createAsyncThunk(
   }
 );
 
-/*
- * POST @ /users/logout
- * headers: Authorization: Bearer token
- */
+//* POST @ /users/logout
+//* headers: Authorization: Bearer token
 export const logOut = createAsyncThunk('auth/logout', async (_, thunkAPI) => {
   try {
     await axios.post('/users/logout');
-    //* After a successful logout, remove the token from the HTTP header
     clearAuthHeader();
-    //* second var for const token
-    // token.unset();
   } catch (error) {
     return thunkAPI.rejectWithValue(error.message);
   }
 });
 
-/*
- * GET @ /users/current
- * headers: Authorization: Bearer token
- */
+//* GET @ /users/current
+//* headers: Authorization: Bearer token
 export const refreshUser = createAsyncThunk(
   'auth/refresh',
   async (_, thunkAPI) => {
@@ -98,8 +71,6 @@ export const refreshUser = createAsyncThunk(
     try {
       //* If there is a token, add it to the HTTP header and perform the request
       setAuthHeader(persistedToken);
-      //* second var for const token
-      // token.set(persistedToken);
       const res = await axios.get('/users/current');
       return res.data;
     } catch (error) {
